@@ -1,0 +1,75 @@
+Muhammad Ozair  500763463 Section: 151
+
+Question:
+
+Suppose that towers(5, 2, 3) is invoked.
+
+1.      How will the first recursive call to towers() be invoked? Answer this question in the form: towers(x, y, z) where you give the actual values to the three parameters.
+
+2.      How many recursive calls to towers() will be made before this first recursive call actually returns to the initial invocation?
+
+3.      Once towers(5, 2, 3) has invoked its first recursive call to towers() and this invocation has returned, what will be printed to stdout? (i.e. What actual move will be made by towers(5, 2, 3) ?)
+
+4.      How will the second recursive call to towers() be invoked? Answer this question in the form: towers(x, y, z) where you give the actual values to the three parameters. 
+
+Answer:
+
+1. towers(4, 2, 1)
+
+2. Five recursive calls will be made until it returns to the inital invocation. 
+
+3. When towers(5,2,3) is invoked, this will be printed to stdout in a file name junk3:
+
+2 3
+2 1
+3 1
+2 3
+1 2
+1 3
+2 3
+2 1
+3 1
+3 2
+1 2
+3 1
+2 3
+2 1
+3 1
+2 3
+1 2
+1 3
+2 3
+1 2
+3 1
+3 2
+1 2
+1 3
+2 3
+2 1
+3 1
+2 3
+1 2
+1 3
+2 3
+
+After the first recursive call to towers() and this invocation has returned, the printed will be:
+
+2 3 
+which is -----> 
+
+ ..........Move #1: From Tower 2 to Tower 3
+
+4. towers(3, 2, 3) 
+
+
+Question:
+
+Suppose that towers(8, 1, 2) is invoked. How many lines will be printed to stdout? 
+
+Answer:
+
+255 lines will be printed to stdout when it is towers(8, 1, 2).
+
+
+
+For this lab everything worked and I got a fairl review of c programming techniques, more specifically the recursion algorithm. I got to experience with stdout and stderr more on this lab and understand how to use it using the junk files.  I achieved in this lab, how to fix the bugs of this game, if the towers and disk number are not entered correctly by the user, you must display it on command line and let the user now what is wrong with the integers entered. 

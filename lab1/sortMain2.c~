@@ -1,0 +1,68 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "mySort.h"
+
+
+/* Muhammad Ozair 
+
+Student Id: 500763463 
+COE 428 section: 151
+*/
+
+int main(int argc, char * argv[])
+
+{
+    int data[100000]; 
+
+    int nDataItems;  
+
+    int i;
+ 
+
+if (argc>1)
+
+{
+
+nDataItems = (argc);
+
+for(i=1; i<nDataItems; i++)
+
+{
+
+data[i-1] = atoi(argv[i]);
+
+}
+
+mySort(data, nDataItems);
+ 
+
+}
+
+else 
+
+{
+
+    nDataItems = 5;
+    data[1] = 10;
+    data[2] = 20;
+    data[3] = 30;
+    data[4] = 40;
+
+}
+
+for(i=1; i<nDataItems; i++)
+
+{ 
+
+printf("%d\n", data[i]);
+
+}
+
+
+
+exit(0);
+
+
+}
+
+

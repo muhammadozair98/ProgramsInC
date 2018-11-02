@@ -1,0 +1,23 @@
+Muhammad Ozair  500763463 Section: 151
+
+Q. 
+Suppose you were given an object module (with no access to source code) that sorted an array of integers very efficiently. However, the sort function in the object module must be invoked with the following signature:
+
+betterSort(int data[], first, last);
+
+where the array to sort is data and the parameters first and last give the indices of the portion of the array that is to be sorted.
+
+How could you write a mySort() function with the signature used in this lab that could exploit the better sorting function in the supplied object module? 
+
+A.
+
+I would write the mySort() function the same as the betterSort function. However since I need to use the betterSort function, since it includes the first and last index, the indices would be for the first number would be at 0 in the position of array and the last number would be at (n-1). 
+
+
+
+Additional Information.
+
+Part 1 of my lab works.
+Part 2 of my lab works to.
+However, for part 2 , I changed the nDataItems to 5 and started the data at index 1 to 4 instead of 0 to 3 for the correct outputs with testSorts2 with no command lind arguments (10,20,30,40).
+

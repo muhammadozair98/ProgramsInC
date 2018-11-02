@@ -1,0 +1,71 @@
+/*  
+Name: Muhammad Ozair
+Student Id: 500763463 
+COE 428 section: 151
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+
+extern int pop();
+extern void push(int);
+extern int StackValue();
+extern int TopValue();
+extern int isEmpty();
+
+
+int main(int argc, char * argv[])
+{
+
+int ch ;
+fprintf(stderr, "Enter only single-character XML tags\n");
+fprintf(stderr, "OR you can use the file named 'codingtestone' to implement this program by doing:\n");
+fprintf(stderr, "validateXML<codingtestone\n");
+ch = getchar();
+
+while((ch)!= EOF)
+{
+    if(!(isalpha(ch) || ch == '>' || ch == '<' || ch == '/'))
+	break; 
+
+    if (ch=='/')
+  {
+
+	if((ch=getchar())==StackValue())
+              pop();
+	else
+	{
+	fprintf(stderr, "NOT Valid\n"); 
+	goto o; 
+	}
+  }
+     else if(ch=='<')
+  {
+       ch=getchar();
+
+	if(!(isalpha(ch)))
+            continue;
+	    push(ch);
+  } 
+	
+	else
+	ch = getchar();
+
+}
+
+	if(TopValue()==0)
+{
+         fprintf(stderr, "Valid\n"); 
+	 
+}
+	else
+{
+	 fprintf(stderr, "NOT Valid\n");
+}
+
+o:exit(0);
+}
+
+
+

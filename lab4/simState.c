@@ -1,0 +1,216 @@
+/*  
+Name: Muhammad Ozair
+Student Id: 500763463 
+COE 428 section: 151
+*/
+
+#include <stdlib.h>
+#include <stdio.h>
+int main(int argc, char * argv[]) {
+enum states {A=0,B,C,D,E,F,G,H};
+
+struct StateMachine {
+char StateName;		
+char Next_State_0;
+char Next_State_1;
+unsigned short Delet_e;
+} state[8];
+
+unsigned short Current_State = F;
+int Vaal;
+int x;
+int y;
+int Delete_the_State;
+int Change_the_State;
+int Change_the_Val;
+int plceholder;
+int Items_Added;
+int sumS; 
+int goneS;
+int going_to_Garbage[8];
+unsigned short can_rchable, cannot_rchable;
+
+	state[A].StateName = 'A';
+	state[A].Next_State_0 = 'F';
+	state[A].Next_State_1 = 'B';
+	state[A].Delet_e = 0;
+
+	state[B].StateName = 'B';
+	state[B].Next_State_0 = 'D';
+	state[B].Next_State_1 = 'F';
+	state[B].Delet_e = 0;
+	
+	state[C].StateName = 'C';
+	state[C].Next_State_0 = 'H';
+	state[C].Next_State_1 = 'D';
+	state[C].Delet_e = 0;
+
+	state[D].StateName = 'D';
+	state[D].Next_State_0 = 'C';
+	state[D].Next_State_1 = 'E';
+	state[D].Delet_e = 0;
+	
+	state[E].StateName = 'E';
+	state[E].Next_State_0 = 'A';
+	state[E].Next_State_1 = 'E';
+	state[E].Delet_e = 0;
+
+	state[F].StateName = 'F';
+	state[F].Next_State_0 = 'G';
+	state[F].Next_State_1 = 'H';
+	state[F].Delet_e = 0;
+	
+	state[G].StateName = 'G';
+	state[G].Next_State_0 = 'B';
+	state[G].Next_State_1 = 'C';
+	state[G].Delet_e = 0;
+
+	state[H].StateName = 'H';
+	state[H].Next_State_0 = 'E';
+	state[H].Next_State_1 = 'G';
+	state[H].Delet_e = 0;
+	
+fprintf(stdout, "\nThis is my current and starting state: F \n");
+
+while((Vaal = getchar()) != EOF){
+if(Vaal == '0'){
+	if(!state[Current_State].Delet_e){
+	Current_State = state[Current_State].Next_State_0 - 'A';
+	fprintf(stdout, "This is the new Current State: %c\n", state[Current_State].StateName); } }
+
+	else if(Vaal == '1'){
+		  if(!state[Current_State].Delet_e ){
+		Current_State = state[Current_State].Next_State_1 - 'A';
+		    fprintf(stdout, "This is the new Current State: %c\n", state[Current_State].StateName);
+		  } }
+
+	else if(Vaal == 'p'){
+	 for(x=0; x<8; x++){  
+	   if(!state[x].Delet_e){
+				fprintf(stdout, "\n%c ", state[x].StateName);
+
+				fprintf(stdout, "%c ", state[x].Next_State_0);
+
+				fprintf(stdout, "%c\n", state[x].Next_State_1); } } }
+
+	else if(Vaal == 'c'){
+     	  while (((Change_the_Val = getchar())== ' ') && (Change_the_Val != '\n'));
+     	  while (((Change_the_State = getchar())== ' ') && (Change_the_State != '\n'));
+		  if(Change_the_Val == '0'){
+			  state[Current_State].Next_State_0 = Change_the_State;
+		  }
+		  else if (Change_the_Val == '1'){
+  			  state[Current_State].Next_State_1 = Change_the_State; } }
+
+	else if(Vaal == 'g'){
+		 
+ 	 going_to_Garbage[0] = state[Current_State].Next_State_0 - 'A';
+	 going_to_Garbage[1] = state[Current_State].Next_State_1 - 'A';
+	 Items_Added = 2; 
+		for(x=0; x<Items_Added; x++){
+            		plceholder = state[going_to_Garbage[x]].Next_State_0 - 'A';
+			sumS = 1;
+				for(y=0; y<Items_Added; y++){
+				if(plceholder ==  going_to_Garbage[y])
+				sumS = 0; }
+				if(sumS){
+				going_to_Garbage[Items_Added] = plceholder;
+				Items_Added++; }
+
+            		plceholder = state[going_to_Garbage[x]].Next_State_1 - 'A';
+			sumS  = 1;
+				for(y=0; y<Items_Added; y++){
+			if(plceholder ==  going_to_Garbage[y])
+				sumS = 0; }
+                	if(sumS){
+				going_to_Garbage[Items_Added] = plceholder;
+				Items_Added++; } }
+
+			if(Items_Added == 8 )
+		    	fprintf(stdout, "\nNo Garbage States \n");
+			else{
+		  	 for(x=0; x<8 ; x++){
+	            		cannot_rchable = 1;
+
+		  		 for(y=0; y<Items_Added; y++){
+				if(x == going_to_Garbage[y] )
+				{
+				     cannot_rchable = 0;
+						break;
+				} }
+				if(cannot_rchable)
+				{
+  		    		fprintf(stdout, "\nGarbage State: %c \n", state[x].StateName);
+				} } } }
+	  
+	 else if (Vaal == 'd'){
+		
+ 		  going_to_Garbage[0] = state[Current_State].Next_State_0 -'A';
+		  going_to_Garbage[1] = state[Current_State].Next_State_1 - 'A';
+		  Items_Added = 2; 
+
+		  for(x=0; x<Items_Added ; x++){
+            plceholder = state[going_to_Garbage[x]].Next_State_0 - 'A';
+			sumS  = 1;
+			for(y=0; y<Items_Added; y++){
+				if(plceholder ==  going_to_Garbage[y])
+					sumS = 0; }
+
+			if(sumS){
+				going_to_Garbage[Items_Added] = plceholder;
+				Items_Added++; }
+
+            plceholder = state[going_to_Garbage[x]].Next_State_1 - 'A';
+			sumS  = 1;
+			for(y=0; y<Items_Added; y++)
+			{
+				if(plceholder ==  going_to_Garbage[y] )
+					sumS = 0; }
+			if(sumS){
+				going_to_Garbage[Items_Added] = plceholder;
+				Items_Added++; } }
+
+	   	  while (((Delete_the_State = getchar())==' '));
+		  if(Delete_the_State == '\n'){
+			  if(Items_Added < 8){
+				for(x=0; x<8 ;x++){
+	                goneS = 1;
+
+				for(y=0; y<Items_Added; y++) {
+					if(x == going_to_Garbage[y]) {
+						goneS = 0;
+					 break; } }
+					if(goneS){
+						if (!state[x].Delet_e){
+							 state[x].Delet_e = 1;
+  		    				 fprintf(stdout, "\nThis State is deleted : %c \n", state[x].StateName); }
+						else{
+							 fprintf(stdout, "\nNo State is deleted \n"); } } } }
+			  else{
+			    fprintf(stdout, "\nNothing deleted\n"); } }
+		  else{
+			  can_rchable = 0;
+			 for (x=0; x<Items_Added; x++) {
+				if(Current_State == going_to_Garbage[x])
+				can_rchable = 1;
+			 }
+
+		     if (state[Delete_the_State - 'A'].Delet_e){
+			   fprintf(stdout, "\nState is not deleted \n"); }
+		     else if (can_rchable && (!state[Delete_the_State - 'A'].Delet_e)){
+			   state[Delete_the_State - 'A'].Delet_e = 1;
+			   fprintf(stdout, "\nState is deleted \n"); }
+		    else{
+			   fprintf(stdout, "\nState is not deleted \n"); } } } }
+				exit(0); 
+
+}
+
+
+
+
+
+
+
+
+

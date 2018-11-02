@@ -1,0 +1,49 @@
+Muhammad Ozair  500763463 Section: 151
+
+Summarize your lab:
+
+  Part 1:
+     Works  Yes or No
+     Yes
+  Part 2:
+     Works  Yes or No
+     Yes
+  Part 3:
+     Works  Yes or No
+     Yes, Please follow the guidelines for Part 3 after you input countXML in terminal. 
+***ANSWERS TO QUESTIONS***
+ Question 1:
+     Which hash table collision resolution method did you use
+     (eg. chaining or open addressing)? Explain your choice
+     briefly (less than 25 words).
+ YOUR ANSWER:
+
+ The hash table collision resolution method I used was open addressing. It was much easier to implement for my code. 
+ 
+ 
+ 
+ 
+ Question 2:
+       Which hash function (division or multiplication) did you use?
+       How did you convert a string into a number?
+ YOUR ANSWER:
+
+I used the Division hash function. It converted the string into number, the letters for ascii values were used.
+ 
+ 
+ Question 3:
+       Another legal XML tag not used in this lab is the
+       stand-alone tag.  This kind of tag
+       combines both a start-tag and end-tag in one.
+       It is identified with a '/' (slash) preceding the
+       final >.  (For example, the <foo/>
+       is a stand-alone tag that is self balancing.
+       
+       Describe briefly how
+       you would modify Part 3 to allow this kind of tag.
+       
+ YOUR ANSWER:
+
+In order to implement a stand-alone tag for part 3, we would have to add another condition to 
+test the string if it has a "/" after the character at the beginning of the code. If it does then the start tag and the end tag would be combined and would be valid , as previously 
+done with the string "/" for part3.

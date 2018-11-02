@@ -1,0 +1,17 @@
+Muhammad Ozair  500763463 Section: 151
+
+This is my personal state machine:
+
+A F B
+B D F
+C H D
+D C E
+E A E
+F G H
+G B C
+H E G
+
+Your starting state is: F 
+
+Most of my program code works. However I am having just a few probelms with the garbage command. As I tested my program out, It seems that when I press the command 'g', the state is already on the list of garbage states if I just change 1 input of a State. This only happened a few times with certain states. 
+

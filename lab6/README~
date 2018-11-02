@@ -1,0 +1,7 @@
+Muhammad Ozair  500763463 Section: 151
+
+My program works correctly. You can input any integer values and once you are done, press Ctrl+D to get the last Reading Input value you entered, then press Ctrl+D again to get the  Heap tree structure as XML and the integers back in sorted and reverse-sorted order.
+
+You can test out a file called "codingtest" with the same integer values from the lab manuel. 
+By doing "heap<codingtest" 
+

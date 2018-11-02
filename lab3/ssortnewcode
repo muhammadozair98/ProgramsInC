@@ -1,0 +1,44 @@
+/*  
+Name: Muhammad Ozair
+Student Id: 500763463 
+COE 428 section: 151
+*/
+
+void mySort(int array[], unsigned int first, unsigned int last)
+
+{
+
+   int i;
+
+   /* Step 1: Is there nothing to sort? */
+
+   while (myCompare(first, last) < 0) 
+
+      /* Step 2: Swap... */
+
+      for(i = first+1; i <= last; i++)
+ {
+
+         /* Find smallest one in rest of array */
+
+         if (myCompare(array[first], array[i]) > 0) 
+{
+
+         /*Step 2..continued...swap them */
+
+            int tmp;
+
+           myCopy(&array[first], &tmp);
+
+           myCopy(&array[i], &array[first]);
+           
+            myCopy(&tmp, &array[i]);
+         }
+
+         first++;
+       return;
+      }
+}
+
+
+

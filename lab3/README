@@ -1,0 +1,24 @@
+Muhammad Ozair  500763463 Section: 151
+
+1. This is a brief summary for this lab:
+
+What I did in this lab was to make my insertion sort and merge sort code with the given guidelines. The codes that I implemented worked without any errors for InsertionSort and MergeSort. I used a file named "codingtest" to test if my codes sort out the numbers without errors. 
+
+2. InsertionSort Theoretical analysis:
+
+These are the equations for the worst, best, average case inputs of n. 
+
+worst: O(n^2)
+best: O(n)
+avaerage: O(n^2)
+
+3. MergeSort Theoretical analysis:
+
+These are the equations for the worst, best, average case inputs of n. 
+
+worst: O(n log(n))
+best: O(n log(n))
+avaerage: O(n log(n))
+ 
+
+
